@@ -1,7 +1,13 @@
-    <!-- script -->
-    <script src="{{ url('assets/js/jquery.min.js') }}"></script>
-    <script src="{{ url('assets/js/materialize.min.js') }}"></script>
-    <script src="{{ url('assets/js/slick.min.js') }}"></script>
-    <script src="{{ url('assets/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ url('assets/js/custom.js') }}"></script>
-    @stack('js')
+<!-- Bootstrap core JavaScript-->
+<script src="{{ url('home/vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ url('home/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="{{ url('home/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="{{ url('home/js/sb-admin-2.min.js') }}"></script>
+
+<!-- Page level plugins -->
+<script src="{{ url('home/vendor/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ url('home/vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>

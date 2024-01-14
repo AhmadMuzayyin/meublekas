@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(\App\Models\Category::class)->constrained()->cascadeOnDelete();
-            $table->string('slug')->unique();
-            $table->string('name');
-            $table->text('description');
-            $table->bigInteger('price');
+            $table->string('nama');
+            $table->text('deskripsi');
+            $table->bigInteger('harga');
+            $table->string('gambar');
             $table->timestamps();
         });
     }

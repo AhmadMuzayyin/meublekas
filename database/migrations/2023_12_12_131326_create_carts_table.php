@@ -14,9 +14,7 @@ return new class extends Migration
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(\App\Models\Product::class)->constrained()->cascadeOnDelete();
-            $table->string('customer_id')->unique();
             $table->integer('quantity');
-            $table->enum('in_cart', [true, false])->default(true);
             $table->timestamps();
         });
     }
