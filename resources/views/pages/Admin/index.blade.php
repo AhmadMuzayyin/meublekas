@@ -17,7 +17,7 @@
                                     <th>Alamat</th>
                                     <th>Whatsapp</th>
                                     <th>Tanggal</th>
-                                    <th>Total Order</th>
+                                    <th>Total Harga</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -28,7 +28,7 @@
                                     <th>Alamat</th>
                                     <th>Whatsapp</th>
                                     <th>Tanggal</th>
-                                    <th>Total Order</th>
+                                    <th>Total Harga</th>
                                     <th>Aksi</th>
                                 </tr>
                             </tfoot>
@@ -40,7 +40,7 @@
                                         <td>{{ $item['alamat'] }}</td>
                                         <td>{{ $item['wa'] }}</td>
                                         <td>{{ $item['tanggal'] }}</td>
-                                        <td>{{ $item['total_order'] }}</td>
+                                        <td>{{ 'Rp.' . number_format($item['total_harga']) }}</td>
                                         <td>
                                             <button type="button" class="btn btn-info btn-circle btn-sm"
                                                 data-toggle="modal" data-target="#detailOrder-{{ $loop->iteration }}">

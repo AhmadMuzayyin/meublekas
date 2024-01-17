@@ -78,8 +78,13 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="nama">Nama Kategori</label>
-                            <input type="text" name="nama" id="nama" class="form-control"
+                            <input type="text" name="nama" id="nama" class="form-control @error('nama') is-invalid @enderror"
                                 placeholder="Nama Kategori">
+                            @error('nama')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="modal-footer">

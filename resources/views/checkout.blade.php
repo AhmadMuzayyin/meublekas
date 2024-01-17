@@ -63,16 +63,31 @@
                                 <h4 class="time-txt1">Form Pemesanan</h4>
                                 <form class="checkout-message-des">
                                     <div class="checkout-message-form">
-                                        <input type="text" class="checkout-message message" id="nama"
-                                            placeholder="Nama Lengkap"></input>
+                                        <input type="text" class="checkout-message message @error('nama') is-invalid @enderror" id="nama"
+                                            placeholder="Nama Lengkap">
+                                        @error('nama')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                     <div class="checkout-message-form mt-2">
-                                        <input type="text" class="checkout-message message" id="alamat"
-                                            placeholder="Alamat"></input>
+                                        <input type="text" class="checkout-message message @error('alamat') is-invalid @enderror" id="alamat"
+                                            placeholder="Alamat">
+                                            @error('alamat')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                     <div class="checkout-message-form mt-2">
-                                        <input type="text" class="checkout-message message" id="whatsapp"
-                                            placeholder="whatsapp"></input>
+                                        <input type="text" class="checkout-message message @error('whatsapp') is-invalid @enderror" id="whatsapp"
+                                            placeholder="whatsapp">
+                                            @error('whatsapp')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
                                     </div>
                                 </form>
                             </div>
@@ -158,7 +173,7 @@
     <script>
         document.getElementById('whatsappButton').addEventListener('click', function() {
             // var phoneNumber = '6287716408127';
-            var phoneNumber = '6287761873813';
+            var phoneNumber = "{{ $profil->whatsapp }}";
             var nama = $('#nama').val();
             var alamat = $('#alamat').val();
             var wa = $('#whatsapp').val();

@@ -12,18 +12,33 @@
                         @csrf
                         <div class="form-group">
                             <label for="nama">Nama Toko</label>
-                            <input type="text" class="form-control" id="nama" name="nama"
+                            <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama"
                                 value="{{ $profile != null ? $profile->nama : '' }}" placeholder="Nama Toko">
+                                @error('nama')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="form-group">
-                            <label for="nama">Alamat</label>
-                            <input type="text" class="form-control" id="alamat" name="alamat"
+                            <label for="alamat">Alamat</label>
+                            <input type="text" class="form-control @error('alamat') is-invalid @enderror" id="alamat" name="alamat"
                                 value="{{ $profile != null ? $profile->alamat : '' }}" placeholder="Alamat">
+                                @error('alamat')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="form-group">
-                            <label for="nama">Whatsapp</label>
-                            <input type="text" class="form-control" id="whatsapp" name="whatsapp"
+                            <label for="whatsapp">Whatsapp</label>
+                            <input type="text" class="form-control @error('whatsapp') is-invalid @enderror" id="whatsapp" name="whatsapp"
                                 value="{{ $profile != null ? $profile->whatsapp : '' }}" placeholder="Whatsapp">
+                                @error('whatsapp')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <button type="submit" class="btn btn-primary">Simpan</button>
                     </form>
