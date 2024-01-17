@@ -226,6 +226,12 @@
                     } else {
                         alert(response[1])
                     }
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    var json = xhr.responseJSON;
+                    $.each(json.errors, function(key, value) {
+                        alert(value)
+                    });
                 }
             })
         });

@@ -81,6 +81,12 @@ class HomeController extends Controller
     }
     public function order(Request $request)
     {
+        $request->validate([
+            'nama' => 'required',
+            'wa' => 'required',
+            'alamat' => 'required',
+            'total_harga' => 'required',
+        ]);
         try {
             $cart = Cart::all();
             $pembelian = Pembelian::create([
