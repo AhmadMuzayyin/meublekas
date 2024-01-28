@@ -83,7 +83,7 @@ class HomeController extends Controller
     {
         $request->validate([
             'nama' => 'required',
-            'wa' => 'required',
+            'wa' => 'required|numeric',
             'alamat' => 'required',
             'total_harga' => 'required',
         ]);
