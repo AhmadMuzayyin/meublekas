@@ -30,6 +30,7 @@ class ProdukController extends Controller
             'category_id' => 'required|exists:categories,id',
             'deskripsi' => 'required',
             'gambar' => 'required|mimes:jpg,png',
+            'stok' => 'required|numeric'
         ]);
         try {
             $request->file('gambar')->store('public/product');
@@ -38,6 +39,7 @@ class ProdukController extends Controller
                 'harga' => $request->harga,
                 'category_id' => $request->category_id,
                 'deskripsi' => $request->deskripsi,
+                'stok' => $request->stok,
                 'gambar' => 'storage/product/' . $request->file('gambar')->hashName(),
             ]);
             return redirect()->back()->with('success', 'Produk berhasil ditambahkan');

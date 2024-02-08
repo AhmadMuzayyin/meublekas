@@ -104,6 +104,9 @@ class HomeController extends Controller
                     'quantity' => $item->quantity,
                     'harga' => $item->product->harga,
                 ]);
+                Product::where('id', $item->product_id)->update([
+                    'stok' => $item->product->stok - $item->quantity
+                ]);
             }
             Cart::truncate();
             return response()->json(['success', 'Berhasil melakukan order']);
